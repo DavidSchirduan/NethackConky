@@ -1,0 +1,65 @@
+background yes
+use_xft yes
+xftfont monospace:pixelsize=12
+xftalpha 0.8
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders yes
+draw_graph_borders yes
+stippled_borders 0
+border_width 2
+default_color white
+default_shade_color white
+default_outline_color grey
+alignment top_left
+gap_x 30
+gap_y 68
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer left
+minimum_size 600 664
+Maximum_width 600
+own_window_type normal
+own_window_argb_visual yes
+imlib_cache_size 1000
+text_buffer_size 8000
+##############################################
+#  Output
+##############################################
+TEXT
+${color dodgerblue4}${font monospace:pixelsize=13:bold}${execi 300 gcalcli --nc --ignore-started agenda `date +%T`> myCalender.txt}${execi 300 head -n 15 myCalender.txt}$font
+${color white}You die...
+${exec echo '┌────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                │
+│                ┌────────────┐                                                  │
+│                │······)······░                                                 │
+│ ┌───────┐      │············│░                                                 │
+│ │···%···+      └───────────+┘░                                                 │
+│ │·······│                ░░░░░░░░░░░░░░░░░░░░░                                 │
+│ │······≾·░                ░  ░               ░                                 │
+│ └───────┘░              ░░░                  ░░0                               │
+│          ░              ░                   ░░░░░░░                            │
+│          ░    ░░░░░░░░░░░               ┌───┐  ░░░┌───┐                        │
+│          ░┌───█──────┐                  │···│ ░  ░····│                        │
+│          ░········#···░                 │⌠··│     │···│                        │
+│           │······`···│                  │···│ ░░░░+·>·│                        │
+│           │····Ω·····█░░░              ░█····░░░░░│·⌠·+                        │
+│           │··········│     ┌────┐    ░░░│···│   ░░····│                        │
+│           │··········│     │···@│    ░  └───┘     └───┘                        │
+│           │··········│     │·····░░░%░                                         │
+│           └──────────┘     │····│                                              │
+│                            │·%[·│                                              │
+│                            └────┘                                              │
+│                                                                                │
+└────────────────────────────────────────────────────────────────────────────────┘'}
+Mercy The Merciful Hacker                         IP: ${addr wlan0}
+${color red}${font monospace:pixelsize=13:bold}UP: $font${color white}[${upspeedgraph wlan0 12,120 8b2132 fe8608}] Speed: ${upspeed wlan0}        ESSID: ${wireless_essid wlan0}
+${color white}${font monospace:pixelsize=13:bold}DN: $font${color white}[${downspeedgraph wlan0 12,120 8b2132 fe8608}] Dx:    ${downspeed wlan0}               Stressed

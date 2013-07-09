@@ -1,0 +1,84 @@
+# this file goes in ~
+
+
+background yes
+use_xft yes
+xftfont monospace:pixelsize=12
+xftalpha 0.8
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders yes
+draw_graph_borders yes
+stippled_borders 0
+border_width 2
+default_color white
+default_shade_color white
+default_outline_color grey
+alignment top_right
+gap_x 50
+gap_y 68
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+minimum_size 674 664
+
+## xcompmgr
+#own_window_type override
+#own_window_argb_visual yes
+
+## cairo-compmgr
+own_window_type normal
+own_window_argb_visual yes
+
+
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+TEXT
+${font DejaVu Sans Mono:pixelsize=16:underline}Inventory:
+
+${font monospace:pixelsize=14:bold}--Coins/Uptime $$-- ${font}
+ $$ - ${color yellow}$$ ${color white}$uptime 
+
+${font monospace:pixelsize=14:bold}--Armor/Weather [-- ${font}
+ x - ${color green}${font monospace:pixelsize=12:bold}[ ${color cyan}${font monospace:pixelsize=12:bold}a blessed +2 Cloak of displacement
+ R - ${color brown}${font monospace:pixelsize=12:bold}[ ${color grey}${font monospace:pixelsize=12:bold}a cursed -1 Fedora
+ m - ${color white}${font monospace:pixelsize=12:bold}[ ${color white}${font}a burned apron
+
+${font monospace:pixelsize=14:bold}--Rings/Weather =-- ${font}
+ h - ${color purple}${font monospace:pixelsize=12:bold}= ${color white}${font}an cursed ring of hunger
+
+${font monospace:pixelsize=14:bold}--Weapons/CPU )-- ${font}
+ a - ${color red}${font monospace:pixelsize=12:bold}) ${color cyan}${font monospace:pixelsize=12:bold}a blessed +2 CPU, ${cpu 1}% rusted (weapon in hands) ${font}${color white}{ ${hwmon temp 1 }°C}
+
+${font monospace:pixelsize=13:bold}--Comestibles/Processes %-- (Currently Rotting: $running_processes)${font}
+ q - ${color orange}${font monospace:pixelsize=12:bold}%${font} ${color grey}a cursed ${font monospace:pixelsize=12}${top name 1}   {${top cpu 1}}  
+ s - ${color red}${font monospace:pixelsize=12:bold}%${font} ${color white}an uncursed ${font monospace:pixelsize=12}${top name 2}{${top cpu 2}}
+ U - ${color green}${font monospace:pixelsize=12:bold}%${font} ${color white}a ${font monospace:pixelsize=12}${top name 3}          {${top cpu 3}}
+ A - ${color white}${font monospace:pixelsize=12:bold}%${font} ${color white}a rotten ${font monospace:pixelsize=12}${top name 4}   {${top cpu 4}}
+
+${font monospace:pixelsize=13:bold}--Scrolls/RAM ?-- (Words Read: $mem/$memmax) $font
+ t - ${color blue}${font monospace:pixelsize=12:bold}?${font} ${color grey}a cursed scroll of ${font monospace:pixelsize=12}${top_mem name 1}   {${top_mem mem 1}}
+ y - ${color white}${font monospace:pixelsize=12:bold}?${font} ${color white}an uncursed scroll of ${font monospace:pixelsize=12}${top_mem name 2}{${top_mem mem 2}}  
+ b - ${color green}${font monospace:pixelsize=12:bold}?${font} ${color cyan}a blessed scroll of ${font monospace:pixelsize=12}${top_mem name 3}  {${top_mem mem 3}} ${color white} 
+ d - ${color white}${font monospace:pixelsize=12:bold}?${font} ${color white}a scroll labeled ${font monospace:pixelsize=12}${top_mem name 4}     {${top_mem mem 4}}  
+
+${font monospace:pixelsize=13:bold}--Spellbooks/HDD +-- (Words Read: ${fs_used /home}/${fs_size /home}) $font
+ i - ${color white}${font monospace:pixelsize=12:bold}+${font} ${color white}an uncursed spellbook of ${font monospace:pixelsize=12}Reading {$diskio_read}} 
+ S - ${color green}${font monospace:pixelsize=12:bold}+${font} ${color grey}a cursed scroll of ${font monospace:pixelsize=12}Writing {$diskio_write}}
+ L - ${color red}${font monospace:pixelsize=12:bold}(${font} ${color white}a magic marker labeled /home/mercy (charge : ${fs_bar 5,120 /home/mercy/})
+  
+${font monospace:pixelsize=13:bold}--Potions/Local !-- (Total Chemicals: ${tcp_portmon 1 32767 count}) $font
+ j - ${color red}${font monospace:pixelsize=12:bold}!${font} ${color white}an uncursed potion of ${tcp_portmon 1 32767 rhost 0} {${tcp_portmon 1 32767 lservice 0}} 
+ Q - ${color blue}${font monospace:pixelsize=12:bold}!${font} ${color white}an uncursed potion of ${tcp_portmon 1 32767 rhost 1} {${tcp_portmon 1 32767 lservice 1}} 
+ M - ${color orange}${font monospace:pixelsize=12:bold}!${font} ${color white}an uncursed potion of ${tcp_portmon 1 32767 rhost 2} {${tcp_portmon 1 32767 lservice 2}} 
+
+${font monospace:pixelsize=13:bold}--Wands/Internet /-- (Total Charges: ${tcp_portmon 32768 61000 count}) $font
+ C - ${color white}${font monospace:pixelsize=12:bold}/${font} ${color white}an uncursed potion of ${tcp_portmon 32768 61000 rhost 0} {${tcp_portmon 32768 61000 rservice 0}}
+ g - ${color cyan}${font monospace:pixelsize=12:bold}/${font} ${color white}an uncursed potion of ${tcp_portmon 32768 61000 rhost 1} {${tcp_portmon 32768 61000 rservice 1}}
+ H - ${color purple}${font monospace:pixelsize=12:bold}/${font} ${color white}an uncursed potion of ${tcp_portmon 32768 61000 rhost 2} {${tcp_portmon 32768 61000 rservice 2}}
