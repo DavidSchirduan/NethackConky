@@ -41,15 +41,16 @@ own_window_argb_visual yes
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
 TEXT
 ${color 48bcff}You used a scroll labeled PREDICT WEATHER:                 
-   $color${execi 600 bash $HOME/Accuweather_RSS/acc_rss}
-   ${font conkyweather:size=30}${execpi 600  sed -n '2p' $HOME/Accuweather_RSS/weather}${font}${goto 75}${voffset -25}${execpi 600 sed -n '1p' $HOME/Accuweather_RSS/weather}
+   $color${execi 600 bash $HOME/1d_accuweather_rss/1d}
+   ${font conkyweather:size=30}${execpi 600  sed -n '2p' $HOME/1d_accuweather_rss/weather}${font}${font}${goto 75}${voffset -25}${execpi 600 sed -n '1p' $HOME/1d_accuweather_rss/weather}
 
 
-   ${execi 600  sed -n '3p' $HOME/Accuweather_RSS/weather}
-   ${font conkyweather:size=30}${execpi 600  sed -n '5p' $HOME/Accuweather_RSS/weather}${font}${goto 75}${voffset -25}${execpi 600 sed -n '4p' $HOME/Accuweather_RSS/weather}
+   ${execi 600  sed -n '3p' $HOME/1d_accuweather_rss/weather}
+   ${font conkyweather:size=30}${execpi 600  sed -n '5p' $HOME/1d_accuweather_rss/weather}${font}${goto 75}${voffset -25}${execpi 600 sed -n '4p' $HOME/1d_accuweather_rss/weather}
 
 
-   ${execi 600  sed -n '6p' $HOME/Accuweather_RSS/weather}
-   ${font conkyweather:size=30}${execpi 600  sed -n '8p' $HOME/Accuweather_RSS/weather}${font}${goto 75}${voffset -25}${execpi 600 sed -n '7p' $HOME/Accuweather_RSS/weather}
+   ${execi 600  sed -n '6p' $HOME/1d_accuweather_rss/weather}
+   ${font conkyweather:size=30}${execpi 600  sed -n '8p' $HOME/1d_accuweather_rss/weather}${font}${goto 75}${voffset -25}${execpi 600 sed -n '7p' $HOME/1d_accuweather_rss/weather}
+
 
 ${color 48bcff}${font monospace:pixelsize=10:bold}(in other words, the perfect day to explore a dungeon)

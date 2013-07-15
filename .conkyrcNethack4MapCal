@@ -35,7 +35,7 @@ text_buffer_size 8000
 #  Output
 ##############################################
 TEXT
-${color dodgerblue4}${font monospace:pixelsize=13:bold}${execi 300 gcalcli --nc --ignore-started agenda `date +%T`> myCalender.txt}${execi 300 head -n 15 myCalender.txt}$font
+${color dodgerblue4}${font monospace:pixelsize=13:bold}${execi 300 gcalcli --config /home/mercy/.gcalcli --nc --ignore-started agenda `date +%T`> myCalender.txt}${execi 300 head -n 15 myCalender.txt}$font
 ${color white}You die...
 ${exec echo '┌────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                │
